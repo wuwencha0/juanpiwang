@@ -11,22 +11,24 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter);
 
 //导入一级组件
-import Today from './page/Today'
-import Youxuan from './page/Youxuan'
-import Global from './page/Global'
-import Cart from './page/Cart'
-import Mine from './page/Mine'
+import Today from './pages/today/Today'
+import Youxuan from './pages/youxuan/Youxuan'
+import Global from './pages/global/Global'
+import Cart from './pages/cart/Cart'
+import Mine from './pages/mine/Mine'
+import Nav from './pages/public/Nav'
 
 //导入二级组件
 
 //配置路由规则
-const routers=[
+const routes=[
   { path: '' , component: Today },
-  { path: '/Today' , component: Today },
-  { path: '/Youxuan' , component: Youxuan },
-  { path: '/Global' , component: Global },
-  { path: '/Cart' , component: Cart },
-  { path: '/Mine' , component: Mine }
+  { path: '/today' , component: Today },
+  { path: '/youxuan' , component: Youxuan },
+  { path: '/global' , component: Global },
+  { path: '/cart' , component: Cart },
+  { path: '/mine' , component: Mine },
+  { path: '/nav' , component: Nav }
 ]
 
 //创建路由实例

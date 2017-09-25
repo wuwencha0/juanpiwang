@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="tabbar">
-      <router-link to="/home" >上新</router-link>
+      <router-link to="/today" >今日上新</router-link>
       <router-link to="/home" >精品优选</router-link>
       <router-link to="/market" >全球购</router-link>
       <router-link to="/cart" >购物车</router-link>
@@ -12,6 +12,13 @@
 </template>
 
 <script>
+//页面自适应
+function changeRem(){
+  document.documentElement.style.fontSize = document.body.offsetWidth/3.6 + 'px';
+}
+changeRem();
+window.onresize = changeRem ;
+
 import Hello from './components/Hello'
 
 export default {
@@ -23,14 +30,48 @@ export default {
 </script>
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
+/*全局样式*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+	font-size: 100px;
+}
+body{
+	font-size: .12rem;
+	font-family: 微软雅黑,microsoft yahei;
+	height: 100%;
+}
+ul,ol{
+	list-style: none;
+}
+img{
+	border:none;
+}
+a{
+	text-decoration: none;
+	color:#333;
+}
+a:hover{
+	color:#f00;
+}
+textarea,input,a{
+	outline:none;
+	}
+textarea{
+	resize:none;
+	}
+.clearfixed:after{
+	content:".";
+	display:block;
+	clear:both;
+	font-size:0;
+	height:0;
+}
+
 #app .tabbar{
   position: fixed;
   left: 0;
