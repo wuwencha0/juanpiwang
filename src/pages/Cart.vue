@@ -1,7 +1,7 @@
 <template>
- <div>
+    <div>
        
-   </div>
+    </div>
 </template>
  
 <script>
@@ -9,7 +9,7 @@ export default {
   name: "component_name",
   data () {
     return {
-        aa: 123
+  
     };
   }
 }
