@@ -2,8 +2,8 @@
   <div id="app">
     <div class="tabbar">
       <router-link to="/today" >今日上新</router-link>
-      <router-link to="/home" >精品优选</router-link>
-      <router-link to="/market" >全球购</router-link>
+      <router-link to="/youxuan" >精品优选</router-link>
+      <router-link to="/global" >全球购</router-link>
       <router-link to="/cart" >购物车</router-link>
       <router-link to="/mine" >我的</router-link>
     </div>
@@ -19,7 +19,7 @@ function changeRem(){
 changeRem();
 window.onresize = changeRem ;
 
-import Hello from './components/Hello'
+import Nav from './components/Hello'
 
 export default {
   name: 'app',

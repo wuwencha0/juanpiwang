@@ -16,7 +16,6 @@ import Youxuan from './pages/youxuan/Youxuan'
 import Global from './pages/global/Global'
 import Cart from './pages/cart/Cart'
 import Mine from './pages/mine/Mine'
-import Nav from './pages/public/Nav'
 
 //导入二级组件
 
@@ -27,8 +26,7 @@ const routes=[
   { path: '/youxuan' , component: Youxuan },
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
-  { path: '/mine' , component: Mine },
-  { path: '/nav' , component: Nav }
+  { path: '/mine' , component: Mine }
 ]
 
 //创建路由实例
