@@ -73,7 +73,7 @@ export default {
       return this.curPage == 4 ? 9 : 8 ;
     },
     navflag(){
-      return this.$route.path === '' || this.$route.path === '/today' || this.$route.path === '/youxuan' || this.$route.path === '/global' || this.$route.path === '/cart' || this.$route.path === '/mine' ;
+      return this.$route.path === '/' || this.$route.path === '/today' || this.$route.path === '/youxuan' || this.$route.path === '/global' || this.$route.path === '/cart' || this.$route.path === '/mine' ;
     },
     curPage(){
       var num = 0 ;
