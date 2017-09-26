@@ -111,6 +111,7 @@ export default {
   justify-content: space-around;
   text-align: center;
   border-top: 1px solid #eee;
+  z-index: 1000;
 }
 img{
   width: .24rem;
