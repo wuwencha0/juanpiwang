@@ -1,6 +1,6 @@
 <template>
     <div>
-       
+       <h1>mine</h1>
     </div>
 </template>
  
@@ -9,7 +9,7 @@ export default {
   name: "component_name",
   data () {
     return {
-      
+  
     };
   }
 }

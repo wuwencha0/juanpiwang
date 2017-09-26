@@ -16,6 +16,7 @@ import Youxuan from './pages/youxuan/Youxuan'
 import Global from './pages/global/Global'
 import Cart from './pages/cart/Cart'
 import Mine from './pages/mine/Mine'
+import IndexNav from './pages/public/IndexNav'
 
 //导入二级组件
 
@@ -44,3 +45,4 @@ new Vue({
   //将路由挂载在vue上
   router
 })
+

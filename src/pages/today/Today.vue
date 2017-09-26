@@ -1,15 +1,15 @@
 <template>
     <div>
-       
+      <h1>today</h1>
     </div>
 </template>
  
 <script>
 export default {
-  name: "component_name",
+  name: "today",
   data () {
     return {
-  
+
     };
   }
 }

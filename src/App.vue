@@ -1,30 +1,23 @@
 <template>
   <div id="app">
-    <div class="tabbar">
-      <router-link to="/today" >今日上新</router-link>
-      <router-link to="/youxuan" >精品优选</router-link>
-      <router-link to="/global" >全球购</router-link>
-      <router-link to="/cart" >购物车</router-link>
-      <router-link to="/mine" >我的</router-link>
-    </div>
-    <router-view></router-view>
+    <indexnav></indexnav>
   </div>
 </template>
 
 <script>
 //页面自适应
 function changeRem(){
-  document.documentElement.style.fontSize = document.body.offsetWidth/3.6 + 'px';
+  document.documentElement.style.fontSize = screen.width/3.6 + 'px';
 }
 changeRem();
 window.onresize = changeRem ;
 
-import Nav from './components/Hello'
+import IndexNav from './pages/public/IndexNav'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    indexnav: IndexNav
   }
 }
 </script>
@@ -55,9 +48,7 @@ a{
 	text-decoration: none;
 	color:#333;
 }
-a:hover{
-	color:#f00;
-}
+
 textarea,input,a{
 	outline:none;
 	}
@@ -72,15 +63,4 @@ textarea{
 	height:0;
 }
 
-#app .tabbar{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 60px;
-  background-color: wheat;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 </style>
