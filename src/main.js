@@ -19,11 +19,21 @@ import Mine from './pages/mine/Mine'
 import Nav from './pages/public/Nav'
 
 //导入二级组件
+import Shangxin from './pages/today/Shangxin'
+import Nvzhuang from './pages/today/Nvzhuang'
 
 //配置路由规则
 const routes=[
-  { path: '' , component: Today },
-  { path: '/today' , component: Today },
+  { path: '' , component: Today, children: [
+    { path: '', component: Shangxin },
+    { path: 'shangxin', component: Shangxin },
+    { path: 'nvzhuang', component: Nvzhuang }
+  ] },
+  { path: '/today' , component: Today, children: [
+    { path: '', component: Shangxin },
+    { path: 'shangxin', component: Shangxin },
+    { path: 'nvzhuang', component: Nvzhuang }
+  ] },
   { path: '/youxuan' , component: Youxuan },
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
@@ -44,5 +54,24 @@ new Vue({
   template: '<App/>',
   components: { App },
   //将路由挂载在vue上
-  router
+  router,
+  mounted(){
+    //获取数据
+    Vue.nextTick(function(){
+      //导航
+        var mySwiper = new Swiper('.nav .swiper-container', {
+          slidesPerView: 6,
+          freeMode: true,
+          spaceBetween: 5,
+          slidesOffsetBefore: 10,
+          slidesOffsetAfter: 10
+        }) ;
+        //轮播图
+        var swiperB = new Swiper('.banner .swiper-container', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          autoplay: 2000//可选选项，自动滑动
+        }); 
+    });
+  }
 })

@@ -14,7 +14,7 @@
 <script>
 //页面自适应
 function changeRem(){
-  document.documentElement.style.fontSize = document.body.offsetWidth/3.6 + 'px';
+  document.documentElement.style.fontSize =screen.width/3.6 + 'px';
 }
 changeRem();
 window.onresize = changeRem ;
@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style>
+@import url(https://cdn.bootcss.com/Swiper/4.0.0-beta.2/css/swiper.min.css);
 /*全局样式*/
 *{
 	margin: 0;
@@ -50,6 +51,8 @@ ul,ol{
 }
 img{
 	border:none;
+  width:100%;
+  vertical-align: middle;
 }
 a{
 	text-decoration: none;
