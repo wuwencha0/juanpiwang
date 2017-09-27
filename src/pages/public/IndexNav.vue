@@ -1,6 +1,6 @@
 <template>
-    <div class="indexnav" v-show="navflag">
-       <div class="tabbar">
+    <div class="indexnav">
+       <div class="tabbar" v-show="navflag">
         <router-link to="/today" :class="nav0"><img :src="imgsrc[navbg0]"><br>今日上新</router-link>
         <router-link to="/youxuan" :class="nav1"><img :src="imgsrc[navbg1]"><br>精品优选</router-link>
         <router-link to="/global" :class="nav2"><img :src="imgsrc[navbg2]"><br>全球购</router-link>
@@ -73,7 +73,7 @@ export default {
       return this.curPage == 4 ? 9 : 8 ;
     },
     navflag(){
-      return this.$route.path === '/' || this.$route.path === '/today' || this.$route.path === '/youxuan' || this.$route.path === '/global' || this.$route.path === '/cart' || this.$route.path === '/mine' ;
+      return this.$route.path === '/' || this.$route.path.indexOf('/today')>=0 || this.$route.path.indexOf('/youxuan')>=0 || this.$route.path.indexOf('/global')>=0 || this.$route.path.indexOf('/cart')>=0 || this.$route.path.indexOf('/mine')>=0 ;
     },
     curPage(){
       var num = 0 ;

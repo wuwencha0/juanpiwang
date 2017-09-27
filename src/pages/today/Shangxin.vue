@@ -1,29 +1,5 @@
 <template>
    <div id="shangxin">
-      <!-- <header>
-        <div class="search">
-            <span><img src = '../../assets/search.png'></span>
-            <a class="search-input" href="" style="color:#999">搜索商品</a>
-        </div>
-        <div class="user"><span></span></div>
-      </header> -->
-      <!-- <div class="nav">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide active"><a href="" class="activea">上新</a></div>
-                <div class="swiper-slide"><a href="">女装</a></div>
-                <div class="swiper-slide"><a href="">鞋包</a></div>
-                <div class="swiper-slide"><a href="">母婴</a></div>
-                <div class="swiper-slide"><a href="">数码</a></div>
-                <div class="swiper-slide"><a href="">居家</a></div>
-                <div class="swiper-slide"><a href="">男士</a></div>
-                <div class="swiper-slide"><a href="">美妆</a></div>
-                <div class="swiper-slide"><a href="">美食</a></div>
-                <div class="swiper-slide"><a href="" class="lastNav">精品服饰</a></div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-      </div> -->
       <div class="banner">
           <div class="swiper-container">
               <div class="swiper-wrapper">
@@ -156,85 +132,52 @@
    </div>
 </template>
  
+
+
+ 
 <script>
+
+import Vue from 'vue'
+
 export default {
   name: "today",
   data () {
     return {
 
     };
-  }
+  },
+  mounted(){
+  //获取数据
+  Vue.nextTick(function(){
+      //轮播图
+      var swiperB = new Swiper('.banner .swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop:true,
+        autoplayDisableOnInteraction: false,
+        autoplay: 1000//可选选项，自动滑动
+      }); 
+  });
+}
 }
 </script>
  
 <style lang="css" scoped>
-header{
-    width: 100%;
-    height: 0.38rem;
-    display: flex;
-    color: #999;
-}
-.search span{
-    display: inline-block;
-    width: 0.13rem;
-    height: 0.13rem;
-    margin:0 0.05rem;
-}
-.search img{
-    width: 100%;
-}
-.search{
-    margin: 5px 0 5px 13px;;
-    flex: 1 1 auto;
-    width: 3.0rem;
-    height: 0.28rem;
-    line-height: 0.28rem;
-    background: red;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    display: flex;
-}
-.search-input{
-    flex: 1 1 auto;
-}
-.user{
-    padding-top: 10px;
-    flex:  0 0 auto;
-    width: 0.42rem;
-    height: 100%;
-}
-/*  ----nav---------- */
-.nav{
-    width: 100%;
-    height: 0.38rem;
-   font-size: 0.14rem;
-    line-height: 0.38rem;
-}
-.nav .swiper-slide{
-    text-align: center;
-    height: 0.38rem;
-}
 
-.nav .active{
-    border-bottom: 2px solid #ff464e;
-}
-.nav .activea{
-    color: #FF464E;
-}
 /*  -----banner------ */
-.banner{
+#shangxin .banner{
     height: 1.40rem;
     width: 100%;
 }
-.banner img{
+#shangxin .banner img{
     width:100%;
     vertical-align: top;
 }
-.banner .swiper-pagination-bullet{
+#shangxin .banner .swiper-pagination-bullet{
     width: 0.05rem;
     height: 0.05rem;
 }
-.banner .swiper-pagination-bullet-active{
+#shangxin .banner .swiper-pagination-bullet-active{
     background: #fff;
 }
 /*  ---    -moudle-ad------------- */

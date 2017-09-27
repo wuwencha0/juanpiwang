@@ -30,12 +30,18 @@
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
-        <router-view></router-view>
       </div>
+       <router-view></router-view>
    </div>
 </template>
  
 <script>
+
+//导入List
+// import List from '../../components/List'
+
+import Vue from 'vue'
+
 export default {
   name: "today",
   data () {
@@ -47,7 +53,20 @@ export default {
     isShowTabBarFn() {
       return this.$route.path === "/today/shangxin" || this.$route.path === "/today" || this.$route.path === "/";
     }
-  }
+  },
+  mounted(){
+  //获取数据
+  Vue.nextTick(function(){
+    //导航
+      var mySwiper = new Swiper('.nav .swiper-container', {
+        slidesPerView: 6,
+        freeMode: true,
+        spaceBetween: 5,
+        slidesOffsetBefore: 10,
+        slidesOffsetAfter: 10
+      }) ;
+  });
+}
 }
 </script>
  
