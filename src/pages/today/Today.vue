@@ -15,18 +15,18 @@
       <div class="nav">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide active"><router-link to="/today/shangxin"><a href="" class="activea">上新</a></router-link></div>
+                <!-- <div class="swiper-slide active"><router-link to="/today/shangxin"><a href="" class="activea">上新</a></router-link></div>
                 <div class="swiper-slide"><router-link to="/today/nvzhuang"><a href="">女装</a></router-link></div>
-                <div class="swiper-slide"><a href="">鞋包</a></div>
-                <div class="swiper-slide"><a href="">母婴</a></div>
-                <div class="swiper-slide"><a href="">数码</a></div>
-                <div class="swiper-slide"><a href="">居家</a></div>
-                <div class="swiper-slide"><a href="">男士</a></div>
-                <div class="swiper-slide"><a href="">美妆</a></div>
-                <div class="swiper-slide"><a href="">美食</a></div>
-                <div class="swiper-slide"><a href="" class="lastNav">精品服饰</a></div>
+                <div class="swiper-slide"><router-link to="/today/xiebao"><a href="">鞋包</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/muying"><a href="">母婴</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/shuma"><a href="">数码</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/jujia"><a href="">居家</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/nanshi"><a href="">男士</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/meizhuang"><a href="">美妆</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/meishi"><a href="">美食</a></router-link></div>
+                <div class="swiper-slide"><router-link to="/today/jingpin"><a href="">精品服饰</a></router-link></div> -->
+                <div class="swiper-slide" v-for="(item, index) in navList" :key="item.id"><router-link :to="'/today/' + item.navPage"><a href="">{{ item.navName }}</a></router-link></div>
             </div>
-                
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
         </div>
@@ -36,7 +36,6 @@
 </template>
  
 <script>
-
 //导入List
 // import List from '../../components/List'
 
@@ -44,29 +43,58 @@ import Vue from 'vue'
 
 export default {
   name: "today",
-  data () {
-    return {
-
-    };
-  },
-   methods: {
+    data () {
+        return {
+            // navPage:['shangxin', "nvzhuang", "xiebao", "muying", "shuma", "jujia", "nanshi", "meizhuang", "meishi", "jingpin"],
+            navList: [
+                // {navPage: 'shangxin', navName: '上新'},
+                // {navPage: 'nvzhuang', navName: '女装'},
+                // {navPage: 'xiebao', navName: '鞋包'},
+                // {navPage: 'muying', navName: '母婴'},
+                // {navPage: 'shuma', navName: '数码'},
+                // {navPage: 'jujia', navName: '居家'},
+                // {navPage: 'nanshi', navName: '男士'},
+                // {navPage: 'meizhuang', navName: '美妆'},
+                // {navPage: 'meishi', navName: '美食'},
+                {navPage: 'jingpin', title: ''}
+                
+            ],
+            // navList: ['上新', "女装", "鞋包", "母婴", "数码", "居家", "男士", "美妆", "美食", "精品服饰"],
+            url: '../../../static/todayNav.json'
+            
+        };
+    },
+    methods: {
     isShowTabBarFn() {
-      return this.$route.path === "/today/shangxin" || this.$route.path === "/today" || this.$route.path === "/";
+        return this.$route.path === "/today/shangxin" || this.$route.path === "/today" || this.$route.path === "/";
     }
-  },
-  mounted(){
-  //获取数据
-  Vue.nextTick(function(){
-    //导航
-      var mySwiper = new Swiper('.nav .swiper-container', {
-        slidesPerView: 6,
-        freeMode: true,
-        spaceBetween: 5,
-        slidesOffsetBefore: 10,
-        slidesOffsetAfter: 10
-      }) ;
-  });
-}
+    },
+    mounted(){
+        //获取数据
+        Vue.nextTick(function(){
+            //导航
+            var mySwiper = new Swiper('.nav .swiper-container', {
+                slidesPerView: 6,
+                freeMode: true,
+                spaceBetween: 5,
+                slidesOffsetBefore: 10,
+                slidesOffsetAfter: 10
+            }) ;
+        });
+    },
+    //我们会把网络请求的代码，放在这个钩子函数中
+    created() {
+        console.log(this);
+        //   console.log(this); //this当前组件实例
+        // 在网络请求中，推荐使用箭头函数，这样能完美的解决 this指向问题
+        this.$axios.get(this.url).then(res => {//异步请求需要回调 then函数
+            // console.log(res, this);
+            // console.log(JSON.parse(res.data))
+            // this.navList.title =(res.data).data;
+        }, err => {
+            console.log(err);
+        });
+    }
 }
 </script>
  
