@@ -19,12 +19,18 @@ import Mine from './pages/mine/Mine'
 import Nav from './pages/public/Nav'
 
 //导入二级组件
+import Shoping from './pages/youxuan/Shoping'
+import Live from './pages/youxuan/Live'
 
 //配置路由规则
 const routes=[
   { path: '' , component: Today },
   { path: '/today' , component: Today },
-  { path: '/youxuan' , component: Youxuan },
+  { path: '/youxuan' , component: Youxuan, children:[
+    {path: '', component: Shoping},
+    {path: 'shoping', component: Shoping},
+    {path: 'live', component: Live}
+  ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
   { path: '/mine' , component: Mine },

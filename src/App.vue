@@ -14,7 +14,7 @@
 <script>
 //页面自适应
 function changeRem(){
-  document.documentElement.style.fontSize = document.body.offsetWidth/3.6 + 'px';
+  document.documentElement.style.fontSize =screen.width/3.6 + 'px';
 }
 changeRem();
 window.onresize = changeRem ;
