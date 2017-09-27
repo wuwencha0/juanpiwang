@@ -60,7 +60,8 @@ export default {
                 
             ],
             // navList: ['上新', "女装", "鞋包", "母婴", "数码", "居家", "男士", "美妆", "美食", "精品服饰"],
-            url: '../../../static/todayNav.json'
+            url: '../../../static/todayNav.json',
+            list: []
             
         };
     },
