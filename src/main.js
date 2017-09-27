@@ -19,14 +19,24 @@ import Mine from './pages/mine/Mine'
 import IndexNav from './pages/public/IndexNav'
 
 //导入二级组件
+import Shangxin from './pages/today/Shangxin'
+import Nvzhuang from './pages/today/Nvzhuang'
 import Shoping from './pages/youxuan/Shoping'
 import Live from './pages/youxuan/Live'
 
 //配置路由规则
 const routes=[
-  { path: '' , component: Today },
-  { path: '/today' , component: Today },
-  { path: '/youxuan' , component: Youxuan, children:[
+  { path: '' , component: Today, children: [
+    { path: '', component: Shangxin },
+    { path: 'shangxin', component: Shangxin },
+    { path: 'nvzhuang', component: Nvzhuang }
+  ] },
+  { path: '/today' , component: Today, children: [
+    { path: '', component: Shangxin },
+    { path: 'shangxin', component: Shangxin },
+    { path: 'nvzhuang', component: Nvzhuang }
+  ] },
+  { path: '/youxuan' , component: Youxuan, children: [
     {path: '', component: Shoping},
     {path: 'shoping', component: Shoping},
     {path: 'live', component: Live}

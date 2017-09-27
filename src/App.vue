@@ -1,17 +1,6 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-    <div class="tabbar">
-      <router-link to="/today" >今日上新</router-link>
-      <router-link to="/youxuan" >精品优选</router-link>
-      <router-link to="/global" >全球购</router-link>
-      <router-link to="/cart" >购物车</router-link>
-      <router-link to="/mine" >我的</router-link>
-    </div>
-    <router-view></router-view>
-=======
     <indexnav></indexnav>
->>>>>>> d8415f0ba7370b28c8c77dbea2ab99bf56932d82
   </div>
 </template>
 
