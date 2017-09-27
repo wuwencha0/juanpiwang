@@ -54,24 +54,5 @@ new Vue({
   template: '<App/>',
   components: { App },
   //将路由挂载在vue上
-  router,
-  mounted(){
-    //获取数据
-    Vue.nextTick(function(){
-      //导航
-        var mySwiper = new Swiper('.nav .swiper-container', {
-          slidesPerView: 6,
-          freeMode: true,
-          spaceBetween: 5,
-          slidesOffsetBefore: 10,
-          slidesOffsetAfter: 10
-        }) ;
-        //轮播图
-        var swiperB = new Swiper('.banner .swiper-container', {
-          pagination: '.swiper-pagination',
-          paginationClickable: true,
-          autoplay: 2000//可选选项，自动滑动
-        }); 
-    });
-  }
+  router
 })
