@@ -1,9 +1,11 @@
 <template>
-    <div>
-       <h1>youxuan</h1>
+    <div id="youxuan">
+        <header>
+            <router-link to="/shoping"><p>商城</p></router-link>
+            <router-link to="/live"><p>生活志</p></router-link>
+        </header>
     </div>
 </template>
- 
 <script>
 export default {
   name: "youxuan",

@@ -21,6 +21,8 @@ import IndexNav from './pages/public/IndexNav'
 //导入二级组件
 import Shangxin from './pages/today/Shangxin'
 import Nvzhuang from './pages/today/Nvzhuang'
+import Shoping from './pages/youxuan/Shoping'
+import Live from './pages/youxuan/Live'
 
 //配置路由规则
 const routes=[
@@ -34,7 +36,11 @@ const routes=[
     { path: 'shangxin', component: Shangxin },
     { path: 'nvzhuang', component: Nvzhuang }
   ] },
-  { path: '/youxuan' , component: Youxuan },
+  { path: '/youxuan' , component: Youxuan, chlidren: [
+    {path: '', component: shoping},
+    {path: 'shoping', component: shoping},
+    {path: 'live', component: live}
+  ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
   { path: '/mine' , component: Mine }
