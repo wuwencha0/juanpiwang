@@ -1,9 +1,10 @@
 <template>
     <div id="youxuan">
         <header>
-            <router-link to="/shoping"><p>商城</p></router-link>
-            <router-link to="/live"><p>生活志</p></router-link>
+            <router-link to="/youxuan/shoping"><p>商城</p></router-link>
+            <router-link to="/youxuan/live"><p>生活志</p></router-link>
         </header>
+        <router-view></router-view>
     </div>
 </template>
 <script>
@@ -23,6 +24,7 @@ export default {
     height: 100%;
     background-color:#f4f4f8;
     position: relative; 
+    padding:0.4rem 0  0.49rem 0;
 }
 header{
     width:100%;

@@ -124,13 +124,13 @@ export default {
 </script>
  
 <style lang="css" scoped>
-#shoping{
+/* #shoping{
     width:100%;
     height: 100%;
     background-color:#f4f4f8;
     position: relative; 
     padding-top:0.4rem;
-}
+} */
 header{
     width:100%;
     height:0.38rem;

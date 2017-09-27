@@ -36,10 +36,10 @@ const routes=[
     { path: 'shangxin', component: Shangxin },
     { path: 'nvzhuang', component: Nvzhuang }
   ] },
-  { path: '/youxuan' , component: Youxuan, chlidren: [
-    {path: '', component: shoping},
-    {path: 'shoping', component: shoping},
-    {path: 'live', component: live}
+  { path: '/youxuan' , component: Youxuan, children: [
+    {path: '', component: Shoping},
+    {path: 'shoping', component: Shoping},
+    {path: 'live', component: Live}
   ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
