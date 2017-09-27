@@ -56,7 +56,7 @@ export default {
                 // {navPage: 'nanshi', navName: '男士'},
                 // {navPage: 'meizhuang', navName: '美妆'},
                 // {navPage: 'meishi', navName: '美食'},
-                {navPage: 'jingpin', title: ''}
+               
                 
             ],
             // navList: ['上新', "女装", "鞋包", "母婴", "数码", "居家", "男士", "美妆", "美食", "精品服饰"],
