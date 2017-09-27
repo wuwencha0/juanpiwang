@@ -1,10 +1,15 @@
 <template>
+<<<<<<< HEAD
     <div id="youxuan">
         <header>
           <router-link to="/youxuan/shoping"><p>商城</p></router-link>
           <router-link to="/youxuan/live"><p>生活志</p></router-link>
         </header> 
         <router-view></router-view>
+=======
+    <div>
+       <h1>youxuan</h1>
+>>>>>>> d8415f0ba7370b28c8c77dbea2ab99bf56932d82
     </div>
 </template>
  

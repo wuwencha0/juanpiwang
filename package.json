@@ -2,7 +2,7 @@
   "name": "juanpiwang",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "wuwencha0 <283157546@qq.com>",
+  "author": "chenqing1234 <982069110@qq.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<<<<<<< HEAD
     <div class="tabbar">
       <router-link to="/today" >今日上新</router-link>
       <router-link to="/youxuan" >精品优选</router-link>
@@ -8,6 +9,9 @@
       <router-link to="/mine" >我的</router-link>
     </div>
     <router-view></router-view>
+=======
+    <indexnav></indexnav>
+>>>>>>> d8415f0ba7370b28c8c77dbea2ab99bf56932d82
   </div>
 </template>
 
@@ -19,17 +23,18 @@ function changeRem(){
 changeRem();
 window.onresize = changeRem ;
 
-import Hello from './components/Hello'
+import IndexNav from './pages/public/IndexNav'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    indexnav: IndexNav
   }
 }
 </script>
 
 <style>
+@import url(https://cdn.bootcss.com/Swiper/4.0.0-beta.2/css/swiper.min.css);
 /*全局样式*/
 *{
 	margin: 0;
@@ -50,14 +55,14 @@ ul,ol{
 }
 img{
 	border:none;
+  width:100%;
+  vertical-align: middle;
 }
 a{
 	text-decoration: none;
 	color:#333;
 }
-a:hover{
-	color:#f00;
-}
+
 textarea,input,a{
 	outline:none;
 	}
@@ -72,15 +77,4 @@ textarea{
 	height:0;
 }
 
-#app .tabbar{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 60px;
-  background-color: wheat;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
 </style>
