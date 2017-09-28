@@ -98,7 +98,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  height: .49rem;
+  height: 49px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -108,10 +108,13 @@ export default {
   z-index: 1000;
 }
 img{
-  width: .24rem;
-  height: .24rem;
+  width: 24px;
+  height: 24px;
 }
 .navA{
   color: red;
+}
+.indexnav{
+  height: 100%;
 }
 </style>
