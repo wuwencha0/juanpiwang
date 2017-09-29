@@ -77,20 +77,14 @@ export default {
     },
     curPage(){
       var num = 0 ;
-      switch (this.$route.path) {
-        case '':
-        case '/today': num = 0 ;
-          break;
-        case '/youxuan': num =1;
-          break;
-        case '/global': num = 2 ;
-          break;
-        case '/cart': num = 3;
-          break;
-        case '/mine': num = 4 ;
-          break;
-        default: num = 0 ;
-          break;
+      if(this.$route.path.indexOf('/youxuan')>=0) {
+        num = 1 ;
+      }else if(this.$route.path.indexOf('/global')>=0){
+        num = 2 ;
+      }else if(this.$route.path.indexOf('/cart')>=0){
+        num = 3 ;
+      }else if(this.$route.path.indexOf('/mine')>=0){
+        num = 4 ;
       }
       return num ;
     }
@@ -104,7 +98,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  height: .49rem;
+  height: 49px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -114,10 +108,13 @@ export default {
   z-index: 1000;
 }
 img{
-  width: .24rem;
-  height: .24rem;
+  width: 24px;
+  height: 24px;
 }
 .navA{
   color: red;
+}
+.indexnav{
+  height: 100%;
 }
 </style>
