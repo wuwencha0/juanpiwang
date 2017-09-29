@@ -4,7 +4,7 @@
        <div class="empty">
          <img src="https://jp.juancdn.com/jpwebapp_v1/images_v1/shopping/empty-cart.png">
          <p>看到喜欢的就带回家吧</p>
-         <a href="/">今日推荐</a>
+         <a href="#/today">今日推荐</a>
        </div>
     </div>
 </template>
