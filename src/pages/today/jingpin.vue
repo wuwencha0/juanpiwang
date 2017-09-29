@@ -41,9 +41,9 @@ export default {
   name: "today",
   data () {
     return {
-        url: '../../../static/nvzhuangTab.json',
+        url: '../../../static/jingpinTab.json',
         listNv: [],
-        url2: '../../../static/nvzhuangMain.json',
+        url2: '../../../static/jingpinMain.json',
         main: [],
         manjian: []
     };
@@ -145,7 +145,7 @@ export default {
     height: 2.43rem;
 }
 .moudleNav li{
-    width:25%;
+    width:50%;
     height: 0.95rem;
     float: left;
 }
