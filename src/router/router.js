@@ -14,22 +14,46 @@ import Mine from '../pages/mine/Mine'
 import IndexNav from '../pages/public/IndexNav'
 
 //导入二级组件
-import Shangxin from '../pages/today/Shangxin'
-import Nvzhuang from '../pages/today/Nvzhuang'
-import Shoping from '../pages/youxuan/Shoping'
-import Live from '../pages/youxuan/Live'
+import Shangxin from './pages/today/Shangxin'
+import Nvzhuang from './pages/today/Nvzhuang'
+import Jingpin from './pages/today/Jingpin'
+import Jujia from './pages/today/Jujia'
+import Meishi from './pages/today/Meishi'
+import Meizhuang from './pages/today/Meizhuang'
+import Muying from './pages/today/Muying'
+import Shuma from './pages/today/Shuma'
+import Xiebao from './pages/today/Xiebao'
+import Nanshi from './pages/today/Nanshi'
+import Shoping from './pages/youxuan/Shoping'
+import Live from './pages/youxuan/Live'
 
 //配置路由规则
 const routes=[
   { path: '' , component: Today, children: [
     { path: '', component: Shangxin },
     { path: 'shangxin', component: Shangxin },
-    { path: 'nvzhuang', component: Nvzhuang }
+    { path: 'nvzhuang', component: Nvzhuang },
+    { path: 'jingpin', component: Jingpin },
+    { path: 'jujia', component: Jujia },
+    { path: 'meishi', component: Meishi },
+    { path: 'meizhuang', component: Meizhuang },
+    { path: 'muying', component: Muying },
+    { path: 'shuma', component: Shuma },
+    { path: 'xiebao', component: Xiebao },
+    { path: 'nanshi', component: Nanshi }
   ] },
   { path: '/today' , component: Today, children: [
     { path: '', component: Shangxin },
     { path: 'shangxin', component: Shangxin },
-    { path: 'nvzhuang', component: Nvzhuang }
+    { path: 'nvzhuang', component: Nvzhuang },
+    { path: 'jingpin', component: Jingpin },
+    { path: 'jujia', component: Jujia },
+    { path: 'meishi', component: Meishi },
+    { path: 'meizhuang', component: Meizhuang },
+    { path: 'muying', component: Muying },
+    { path: 'shuma', component: Shuma },
+    { path: 'xiebao', component: Xiebao },
+    { path: 'nanshi', component: Nanshi }
   ] },
   { path: '/youxuan' , component: Youxuan, children: [
     {path: '', component: Shoping},
