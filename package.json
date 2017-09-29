@@ -12,8 +12,13 @@
   "dependencies": {
     "axios": "^0.16.2",
     "vue": "^2.4.2",
+<<<<<<< HEAD
     "vue-resource": "^1.3.4",
     "vue-router": "^2.7.0"
+=======
+    "vue-router": "^2.7.0",
+    "vuex": "^2.4.1"
+>>>>>>> 9e54d56ca532defcb90ccb0a2b22bf485e9fd44e
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

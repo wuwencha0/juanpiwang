@@ -1,0 +1,72 @@
+[
+    {
+        "pic": "https://goods8.juancdn.com/jas/170925/e/6/59c8e8278150a1722566e454_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png",
+        "url": "https://mact.juanpi.com/cjcd?mjuanpi_wx=1",
+        "id": "15364",
+        "size": "750*290",
+        "title": "927长假出行穿搭",
+        "server_jsonstr": "{\"pit_info\":\"banner::15364::1_1\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_1",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods6.juancdn.com/jas/170928/a/1/59cc49508150a14b6a60aa86_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png",
+        "url": "https://m.juanpi.com/brand/3437058?shop_id=3437058",
+        "id": "15378",
+        "size": "750*290",
+        "title": "鞋子-大东",
+        "server_jsonstr": "{\"pit_info\":\"banner::15378::1_2\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_2",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods8.juancdn.com/jas/170928/e/c/59cc49088150a14dab1c40aa_1080x418.jpg?imageMogr2/thumbnail/750x290!/quality/80!/format/jpg",
+        "url": "https://m.juanpi.com/brand/3512061?shop_id=3512061",
+        "id": "15379",
+        "size": "750*290",
+        "title": "男装-木笛",
+        "server_jsonstr": "{\"pit_info\":\"banner::15379::1_3\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_3",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods2.juancdn.com/jas/170928/3/e/59cc49f28150a14b266a996b_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png",
+        "url": "https://m.juanpi.com/brand/2687960?shop_id=2687960",
+        "id": "15380",
+        "size": "750*290",
+        "title": "美妆-御泥坊",
+        "server_jsonstr": "{\"pit_info\":\"banner::15380::1_4\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_4",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods5.juancdn.com/jas/170928/9/3/59cc4a218150a14bea6c48b4_1080x418.jpg?iopcmd=thumbnail&type=11&height=290&width=750%7Ciopcmd=convert&Q=80&dst=jpg",
+        "url": "https://m.juanpi.com/brand/2798970?shop_id=2798970",
+        "id": "15381",
+        "size": "750*290",
+        "title": "运动户外-阿迪",
+        "server_jsonstr": "{\"pit_info\":\"banner::15381::1_5\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_5",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods4.juancdn.com/jas/170920/7/1/59c1c0baa9fcf83c4773cd61_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png",
+        "url": "https://mact.juanpi.com/jcyp?mjuanpi_wx=1",
+        "id": "15331",
+        "size": "750*290",
+        "title": "美食-卷品荆楚优品扶植",
+        "server_jsonstr": "{\"pit_info\":\"banner::15331::1_6\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_6",
+        "activityname": "click_ad_banner"
+    },
+    {
+        "pic": "https://goods8.juancdn.com/jas/170916/e/e/59bc72438150a1376c528f2e_1080x418.jpg?imageMogr2/thumbnail/750x290!/quality/80!/format/jpg",
+        "url": "https://m.juanpi.com/survey/mobile/1990494?mjuanpi_wx=1",
+        "id": "15213",
+        "size": "750*290",
+        "title": "用户画像问卷0923",
+        "server_jsonstr": "{\"pit_info\":\"banner::15213::1_7\",\"cid\":\"\",\"_t\":1506596664}",
+        "x_record": "1_7",
+        "activityname": "click_ad_banner"
+    }
+]
