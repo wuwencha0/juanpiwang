@@ -122,7 +122,7 @@ export default {
     };
   },
   created(){
-    this.$http.get(this.url).then(res=>{
+    this.axios.get(this.url).then(res=>{
       this.list = res.data.data.banner_ads;
     },err=>{
       console.log(err);
