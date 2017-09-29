@@ -24,9 +24,7 @@
        <router-view></router-view>
    </div>
 </template>
- 
 <script>
-
 
 import Vue from 'vue'
 
@@ -37,7 +35,6 @@ export default {
            luyou:['shangxin', 'nvzhuang', 'xiebao', 'muying', 'shuma', 'jujia', 'nanshi', 'meizhuang', 'meishi', 'jingpin'],
             url: '../../../static/todayNav.json',
             navList: []
-            
         };
     },
     methods: {

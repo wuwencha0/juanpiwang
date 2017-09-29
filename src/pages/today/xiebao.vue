@@ -1,6 +1,5 @@
 <template>
    <div id="nvzhuang">
-       
         <div class="moudleNav">
             <ul>
                 <li v-for="(item, index) in listNv" :key="item.id"><img class="lazy loaded" :src="item.pic"></li>
