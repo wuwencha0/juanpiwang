@@ -80,6 +80,20 @@ devMiddleware.waitUntilValid(() => {
   _resolve()
 })
 
+// //引入json-server(创建接口)
+// const jsonServer = require('json-server')
+// const apiServer = jsonServer.create()
+// //这个db.json就是制作借口的json文件，默认放在根目录
+// const apiRouter = jsonServer.router('db.json')
+// const middlewares = jsonServer.defaules()
+
+// apiServer.use(apiRouter)
+// apiServer.use(middlewares)
+
+// //因为还有一个webpack服务， 端口8080, 这里也要配置一个，不能重复
+// apiServer.listen(port + 1, () => {
+//   console.log('jsonServer is running')
+// })
 var server = app.listen(port)
 
 module.exports = {
