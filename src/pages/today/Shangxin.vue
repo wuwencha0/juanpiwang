@@ -19,7 +19,7 @@
           <div class="jianju"></div>
           <div class="col">
               <ul>
-                  <li><img src="https://goods8.juancdn.com/jas/170828/e/7/59a3f55e8150a1637e478d48_270x267.png?imageMogr2/quality/85!/format/png"></li>
+                    <li><a href = ""> <img src="https://goods8.juancdn.com/jas/170828/e/7/59a3f55e8150a1637e478d48_270x267.png?imageMogr2/quality/85!/format/png"></a></li>
                   <li><img src="https://goods8.juancdn.com/jas/170809/e/8/598a7504a9fcf866ab51bcfe_270x267.png?imageMogr2/quality/85!/format/png"></li>
                   <li><img src="https://goods4.juancdn.com/jas/170828/7/1/59a3f5768150a16da3399c8f_270x267.png?imageMogr2/quality/85!/format/png"></li>
                   <li><img src="https://goods1.juancdn.com/jas/170906/1/c/59af976b8150a15198156939_270x267.png?iopcmd=convert&amp;Q=85&amp;dst=webp"></li>
@@ -28,7 +28,7 @@
           <div class="jianju"></div> 
           <div class="limit">
               <div class="limitLeft">
-                  <img class="lazy loaded" src="https://goods3.juancdn.com/jas/170922/4/7/59c4f3c3a9fcf80adf606512_540x656.png?iopcmd=convert&amp;Q=85&amp;dst=webp">
+                  <router-link to="/xianshiqiang"> <img class="lazy loaded" src="https://goods3.juancdn.com/jas/170922/4/7/59c4f3c3a9fcf80adf606512_540x656.png?iopcmd=convert&amp;Q=85&amp;dst=webp"></router-link>
                   <p>
                       <span>00</span>
                       <b>:</b>

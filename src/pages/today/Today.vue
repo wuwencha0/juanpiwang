@@ -45,10 +45,9 @@ export default {
     updated(){
         //获取数据
         Vue.nextTick(function(){
-            
             //导航
             var mySwiper = new Swiper('.nav .swiper-container', {
-                slidesPerView: 6,
+                slidesPerView: 5.9,
                 freeMode: true,
                 spaceBetween: 5,
                 slideToClickedSlide:true,
