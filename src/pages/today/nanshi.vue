@@ -1,16 +1,9 @@
 <template>
-   <div id="nansih">
-      男士
+   <div id="nvzhuang">
+       
         <div class="moudleNav">
             <ul>
-                <li><img class="lazy loaded" src="https://goods5.juancdn.com/jas/170818/9/b/599636d9a9fcf8ab177f7cec_200x212.png?iopcmd=convert&amp;Q=85&amp;dst=webp"></li>
-                <li><img class="lazy loaded" src="https://goods3.juancdn.com/jas/170818/4/8/599636fba9fcf892a40692aa_200x212.png?iopcmd=convert&amp;Q=85&amp;dst=webp"></li>
-                <li><img class="lazy loaded" src="https://goods8.juancdn.com/jas/170818/f/0/5996370c8150a10af70b7843_200x212.png?imageMogr2/quality/85!/format/png"></li>
-                <li><img class="lazy loaded" src="https://goods8.juancdn.com/jas/170818/e/8/5996371ca9fcf8560039ce22_200x212.png?imageMogr2/quality/85!/format/png"></li>
-                <li><img class="lazy loaded" src="https://goods8.juancdn.com/jas/170818/e/8/5996371ca9fcf8560039ce22_200x212.png?imageMogr2/quality/85!/format/png"></li>
-                <li><img class="lazy loaded" src="https://goods8.juancdn.com/jas/170818/e/a/5996373aa9fcf8bc42104457_200x212.png?imageMogr2/quality/85!/format/png"></li>
-                <li><img class="lazy loaded" src="https://goods5.juancdn.com/jas/170818/9/2/5996374fa9fcf813397a8c90_200x212.png?iopcmd=convert&amp;Q=85&amp;dst=webp"></li>
-                <li><img class="lazy loaded" src="https://goods2.juancdn.com/jas/170818/3/5/59963770a9fcf8133f69cff2_200x212.png?imageMogr2/quality/85!/format/png"></li>
+                <li v-for="(item, index) in listNv" :key="item.id"><img class="lazy loaded" :src="item.pic"></li>
             </ul>
             <div class="jianju"></div>
             <div class="gengxin">
@@ -19,75 +12,24 @@
         </div>
         <main>
             <ul>
-                <li>
+                <li v-for="(item, index) in main" :key="item.id">
                     <a href="">
                         <div class="clothes">
-                            <img class="lazy loaded" src="https://goods6.juancdn.com/bao/160805/b/8/57a3e441151ad1c77c8b45ae_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt="骆汐女装清仓专场">
+                            <img class="lazy loaded" :src="item.pic_url" alt="骆汐女装清仓专场">
                             <div class="shop-logo">
-                                <img class="lazy loaded" src="https://s1.juancdn.com/brand/170328/a/e/58da2a86a43d1f7a806ecf20_180x90.png">
+                                <img class="lazy loaded" :src="item.shop_logo">
                             </div>
                         </div>
                     </a>
                     <a href="">
                         <div class="miaoshu">
-                            <div class="price"><span class="pricejia">119元任选两件</span></div>
-                            <div class="zhuanchang"><span class="shangxin">上新</span><h3>骆驼女装清仓专场</h3></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <div class="clothes">
-                            
-                                <img class="lazy loaded" src="https://goods4.juancdn.com/goods/170911/6/b/59b5e4e78150a10d685294a8_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt="瑜秀百变时尚专场">
-                            <div class="shop-logo">
-                                <img class="lazy loaded" src="https://s1.juancdn.com/brand/170328/a/e/58da2a86a43d1f7a806ecf20_180x90.png">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="miaoshu">
-                            <div class="price"><span class="pricejia">119元任选两件</span></div>
-                            <div class="zhuanchang"><span class="shangxin">上新</span><h3>骆驼女装清仓专场</h3></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <div class="clothes">
-                                <img class="lazy loaded" src="https://goods4.juancdn.com/goods/170911/6/b/59b5e4e78150a10d685294a8_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt="瑜秀百变时尚专场">
-                            <div class="shop-logo">
-                                <img class="lazy loaded" src="https://s1.juancdn.com/brand/170328/a/e/58da2a86a43d1f7a806ecf20_180x90.png">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="miaoshu">
-                            <div class="price"><span class="pricejia">￥29.9</span> <span class="oldPrice">￥39.9</span></div>
-                            <div class="zhuanchang"><span class="shangxin">上新</span><h3>骆驼女装清仓专场</h3></div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <div class="clothes">
-                                <img class="lazy loaded" src="https://goods4.juancdn.com/goods/170911/6/b/59b5e4e78150a10d685294a8_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt="瑜秀百变时尚专场">
-                            <div class="shop-logo">
-                                <img class="lazy loaded" src="https://s1.juancdn.com/brand/170328/a/e/58da2a86a43d1f7a806ecf20_180x90.png">
-                            </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="miaoshu">
-                            <div class="price"><span class="pricejia">￥29.9</span> <span class="oldPrice">￥39.9</span></div>
-                            <div class="zhuanchang"><span class="shangxin">上新</span><h3>骆驼女装清仓专场</h3></div>
+                           <div class="price"><span class="pricejia">{{manjian[index] | manji1}}</span> <span class="oldPrice"> {{manjian[index] | manji2}}</span></div>
+                            <div class="zhuanchang"><span class="shangxin">{{ item.residue }}</span><h3>{{ item.title }}</h3></div>
                         </div>
                     </a>
                 </li>
             </ul>
         </main>
-
-
 
       <!-- 底部距离 -->
       <div class="dibu"></div>
@@ -99,9 +41,51 @@ export default {
   name: "today",
   data () {
     return {
-
+        url: '../../../static/nanshiTab.json',
+        listNv: [],
+        url2: '../../../static/nanshiMain.json',
+        main: [],
+        manjian: []
     };
-  }
+  },
+  created(){
+      this.axios.get(this.url).then(res => {
+        //   console.log(res.data);
+          this.listNv = res.data;
+      }, res => {
+          console.log(err);
+      });
+      this.axios.get(this.url2).then(res => {
+            // console.log(res.data);
+            this.main = res.data;
+           for(var i of res.data){
+                if(!i.coupon){
+                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    continue;
+                }
+                this.manjian.push(i.coupon.rules);
+           }
+            // console.log(this.manjian);
+        }, res => {
+            console.log(err);
+        })
+  },
+  filters: {
+        manji1(item){
+            if(item.iscut){
+                return '¥' + item.cprice
+            }else{
+                return item[0].aeBankInfo;
+            }
+        },
+        manji2(item){
+            if(item.iscut){
+                return '¥' + item.oprice
+            }else{
+                return ''
+            }
+        }
+    }
 }
 </script>
  
@@ -241,6 +225,12 @@ main .oldPrice{
 .zhuanchang .shangxin{
    float: right;
    color: #bbb;
+}
+/* ------底部- */
+.dibu{
+  clear: both;
+  height: 0.6rem;
+  width:100%;
 }
 
 </style>

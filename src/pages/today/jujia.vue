@@ -1,6 +1,38 @@
 <template>
-   <div id="jujia">
-       居家
+   <div id="nvzhuang">
+       
+        <div class="moudleNav">
+            <ul>
+                <li v-for="(item, index) in listNv" :key="item.id"><img class="lazy loaded" :src="item.pic"></li>
+            </ul>
+            <div class="jianju"></div>
+            <div class="gengxin">
+                <img class="lazy loaded" src="https://goods1.juancdn.com/bao/170310/0/f/58c20db7a43d1f63427015d8_750x96.jpg?iopcmd=convert&amp;Q=85&amp;dst=webp">
+            </div>
+        </div>
+        <main>
+            <ul>
+                <li v-for="(item, index) in main" :key="item.id">
+                    <a href="">
+                        <div class="clothes">
+                            <img class="lazy loaded" :src="item.pic_url" alt="骆汐女装清仓专场">
+                            <div class="shop-logo">
+                                <img class="lazy loaded" :src="item.shop_logo">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="miaoshu">
+                           <div class="price"><span class="pricejia">{{manjian[index] | manji1}}</span> <span class="oldPrice"> {{manjian[index] | manji2}}</span></div>
+                            <div class="zhuanchang"><span class="shangxin">{{ item.residue }}</span><h3>{{ item.title }}</h3></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </main>
+
+      <!-- 底部距离 -->
+      <div class="dibu"></div>
    </div>
 </template>
  
@@ -9,9 +41,51 @@ export default {
   name: "today",
   data () {
     return {
-
+        url: '../../../static/jujiaTab.json',
+        listNv: [],
+        url2: '../../../static/jujiaMain.json',
+        main: [],
+        manjian: []
     };
-  }
+  },
+  created(){
+      this.axios.get(this.url).then(res => {
+        //   console.log(res.data);
+          this.listNv = res.data;
+      }, res => {
+          console.log(err);
+      });
+      this.axios.get(this.url2).then(res => {
+            // console.log(res.data);
+            this.main = res.data;
+           for(var i of res.data){
+                if(!i.coupon){
+                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    continue;
+                }
+                this.manjian.push(i.coupon.rules);
+           }
+            // console.log(this.manjian);
+        }, res => {
+            console.log(err);
+        })
+  },
+  filters: {
+        manji1(item){
+            if(item.iscut){
+                return '¥' + item.cprice
+            }else{
+                return item[0].aeBankInfo;
+            }
+        },
+        manji2(item){
+            if(item.iscut){
+                return '¥' + item.oprice
+            }else{
+                return ''
+            }
+        }
+    }
 }
 </script>
  
@@ -151,6 +225,12 @@ main .oldPrice{
 .zhuanchang .shangxin{
    float: right;
    color: #bbb;
+}
+/* ------底部- */
+.dibu{
+  clear: both;
+  height: 0.6rem;
+  width:100%;
 }
 
 </style>
