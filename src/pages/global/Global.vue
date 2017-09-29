@@ -1,44 +1,171 @@
 <template>
     <div id="global">
-       <header>
-         <div>
-           全球购
-           <span></span>
-         </div>
-       </header>
-       <div class="banner">
-         <div class="sale">
-           <p>满90元</p>
-           <p>减10元</p>
-         </div>
-         <img src="https://goods3.juancdn.com/seller/170907/5/5/59b0c6678150a16ab172c319_750x350.jpg?iopcmd=convert&Q=88&dst=jpg" alt="">
-       </div>
-       <div class="conter">
-         <div class="shop">
-           <div><img src="https://goods4.juancdn.com/bao/170724/7/f/59757b67a9fcf85d3e1a1056_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt=""></div>
-           <div class="price">￥198 <span class="sale-price">￥560</span></div>
-           <p>美迪惠尔针剂补水套装</p>
-         </div>
-         <div class="shop">
-           <div><img src="https://goods8.juancdn.com/bao/161213/f/6/584fb8f4db01d994118b4595_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt=""></div>
-           <div class="price">￥52 <span class="sale-price">￥216</span></div>
-           <p>美迪惠尔针剂补水套装</p>
-         </div><div class="shop">
-           <div><img src="https://goods2.juancdn.com/bao/170323/2/6/58d33323a43d1f2c50069194_800x800.jpg?imageMogr2/thumbnail/310x310!/quality/88!/format/jpg" alt=""></div>
-           <div class="price">￥59 <span class="sale-price">￥199</span></div>
-           <p>美迪惠尔针剂补水套装</p>
-         </div>
-       </div>
+        <header>
+          <div>
+            全球购
+            <span></span>
+          </div>
+        </header>
+        <div class="banner">
+          <div class="sale">
+            <p>满90元</p>
+            <p>减10元</p>
+          </div>
+          <img :src="list[0].pic" :title="list[0].title"/>
+        </div>
+        <div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="shop swiper-slide" v-for="(item,index) in list5" :key="item.id">
+                <div><img :src="item.pic_url" alt=""></div>
+                <div class="price">￥{{ item.cprice }} <span class="sale-price">￥{{item.oprice}}</span></div>
+                <p>{{ item.title }}</p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+          <div class="banner">
+            <div class="sale">
+              <p>满90元</p>
+              <p>减10元</p>
+            </div>
+            <img :src="list[1].pic">
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="shop swiper-slide" v-for="(item,index) in list3" :key="item.id">
+                <div><img :src="item.pic_url" alt=""></div>
+                <div class="price">￥{{ item.cprice }} <span class="sale-price">￥{{item.oprice}}</span></div>
+                <p>{{ item.title }}</p>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="banner">
+            <div class="sale">
+              <p>满90元</p>
+              <p>减10元</p>
+            </div>
+            <img :src="list[2].pic">
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="shop swiper-slide" v-for="(item,index) in list4" :key="item.id">
+                <div><img :src="item.pic_url" alt=""></div>
+                <div class="price">￥{{ item.cprice }} <span class="sale-price">￥{{item.oprice}}</span></div>
+                <p>{{ item.title }}</p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="banner">
+            <div class="sale">
+              <p>满90元</p>
+              <p>减10元</p>
+            </div>
+            <img :src="list[3].pic">
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="shop swiper-slide" v-for="(item,index) in list2" :key="item.id">
+                  <div><img :src="item.pic_url" alt=""></div>
+                  <div class="price">￥{{ item.cprice }} <span class="sale-price">￥{{item.oprice}}</span></div>
+                  <p>{{ item.title }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner">
+            <div class="sale">
+              <p>满90元</p>
+              <p>减10元</p>
+            </div>
+            <img :src="list[4].pic">
+          </div>
+          
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="shop swiper-slide" v-for="(item,index) in list6" :key="item.id">
+                    <div><img :src="item.picurl" alt=""></div>
+                    <div class="price">￥{{ item.cprice }} <span class="sale-price">￥{{item.oprice}}</span></div>
+                    <p>{{ item.title }}</p>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="dibu"></div>
     </div>
+    
 </template>
  
 <script>
+import Vue from 'Vue'
 export default {
   name: "global",
   data () {
     return {
-  
+       url:"./././static/ajax_data/data/global-02.json",
+       url2:"./././static/ajax_data/data/global-healthCare.json",
+       url3:"./././static/ajax_data/data/global-baby.json",
+       url4:"./././static/ajax_data/data/global-beauty.json",
+       url5:"./././static/ajax_data/data/global-food.json",
+       url6:"./././static/ajax_data/data/global-goods.json",
+       list:[{pic:''},{pic:''},{pic:''},{pic:''},{pic:''},{pic:''}],
+       list2:[{pic:''}],
+       list3:[{pic:''}],
+       list4:[{pic:''}],
+       list5:[{pic:''}],
+       list6:[{pic:''}]
     };
+  },
+  created(){
+    this.$http.get(this.url).then(res=>{
+      this.list = res.data.data.banner_ads;
+    },err=>{
+      console.log(err);
+    });
+    this.axios.get(this.url2).then(res=>{
+      this.list2 = res.data.list;   
+    },err=>{
+      console.log(err);
+    });
+    this.axios.get(this.url3).then(res=>{
+      this.list3 = res.data.list;   
+    },err=>{
+      console.log(err);
+    });
+    this.axios.get(this.url4).then(res=>{
+      this.list4 = res.data.list;   
+    },err=>{
+      console.log(err);
+    });
+    this.axios.get(this.url5).then(res=>{
+      this.list5 = res.data.list;   
+    },err=>{
+      console.log(err);
+    });
+    this.axios.get(this.url6).then(res=>{
+      this.list6 = res.data.data;   
+    },err=>{
+      console.log(err);
+    });
+  },
+  updated(){
+  //获取数据
+      Vue.nextTick(function(){
+        //导航
+          var mySwiper1 = new Swiper('#global .swiper-container', {
+            slidesPerView: 4,
+            freeMode: true,
+            spaceBetween: 5,
+            slidesOffsetBefore: 10,
+            slidesOffsetAfter: 10,
+            observer:true
+          }) ;
+      });
   }
 }
 </script>
@@ -85,6 +212,7 @@ export default {
 }
  .conter{
    padding-top: .1rem;
+   margin-bottom: .1rem;
    height: 1.5rem;
    display: flex;
    flex-direction: row;
@@ -114,4 +242,9 @@ export default {
    text-align: center;
    color:#666;
  }
+ .dibu{
+  clear: both;
+  height: 0.5rem;
+  width:100%;
+}
 </style>

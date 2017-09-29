@@ -10,6 +10,16 @@ import VueRouter from 'vue-router'
 //全局安装路由
 Vue.use(VueRouter);
 
+//导入数据请求模块
+import VueResource from 'vue-resource'
+//使用数据请求模块
+Vue.use(VueResource)
+
+//导入axios模块
+import axios from 'axios'
+//注册axios,由于axios是非官方的模块无法使用Vue.use()方法来注册，只能在原型上注册
+Vue.prototype.axios =axios
+
 //导入一级组件
 import Today from './pages/today/Today'
 import Youxuan from './pages/youxuan/Youxuan'
