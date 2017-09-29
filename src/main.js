@@ -36,6 +36,8 @@ import Muying from './pages/today/Muying'
 import Shuma from './pages/today/Shuma'
 import Xiebao from './pages/today/Xiebao'
 import Nanshi from './pages/today/Nanshi'
+import Shoping from './pages/youxuan/Shoping'
+import Live from './pages/youxuan/Live'
 
 //配置路由规则
 const routes=[
@@ -65,7 +67,11 @@ const routes=[
     { path: 'xiebao', component: Xiebao },
     { path: 'nanshi', component: Nanshi }
   ] },
-  { path: '/youxuan' , component: Youxuan },
+  { path: '/youxuan' , component: Youxuan, children: [
+    {path: '', component: Shoping},
+    {path: 'shoping', component: Shoping},
+    {path: 'live', component: Live}
+  ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
   { path: '/mine' , component: Mine }
