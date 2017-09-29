@@ -41,9 +41,9 @@ export default {
   name: "today",
   data () {
     return {
-        url: '../../../static/nvzhuangTab.json',
+        url: '../../../static/muyingTab.json',
         listNv: [],
-        url2: '../../../static/nvzhuangMain.json',
+        url2: '../../../static/muyingMain.json',
         main: [],
         manjian: []
     };

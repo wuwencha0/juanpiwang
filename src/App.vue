@@ -35,9 +35,10 @@ html{
 	font-size: 100px;
 }
 body{
-	font-size: .12rem;
+	font-size: 12px;
 	font-family: 微软雅黑,microsoft yahei;
 	height: 100%;
+	color: #666 ;
 }
 ul,ol{
 	list-style: none;
@@ -65,5 +66,7 @@ textarea{
 	font-size:0;
 	height:0;
 }
-
+#app{
+	height: 100% ;
+}
 </style>
