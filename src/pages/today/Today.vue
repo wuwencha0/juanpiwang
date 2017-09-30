@@ -62,7 +62,7 @@ export default {
                 slideToClickedSlide:true,
                 slidesOffsetBefore: 10,
                 slidesOffsetAfter: 10,
-                  observer: true 
+                observer: true 
             }) ;
         });
     },
