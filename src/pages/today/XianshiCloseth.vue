@@ -92,11 +92,6 @@ export default {
 
         }); 
         console.log(swiper);
-        swiper.update();
-        setTimeout(function() {
-          swiper.update();
-          console.log(swiper);
-        }, 1000);
     }); 
  }
 }
