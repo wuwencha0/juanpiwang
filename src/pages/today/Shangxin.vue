@@ -74,9 +74,7 @@
                 
             </ul>
         </main>
-
       </div>
-
       <!-- 底部距离 -->
       <div class="dibu"></div>
    </div>
@@ -121,6 +119,7 @@ export default {
         this.axios.get(this.url2).then(res => {
             // console.log(res.data);
             this.main = res.data;
+            //判断有木有某个属性
            for(var i of res.data){
                 if(!i.coupon){
                     this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});

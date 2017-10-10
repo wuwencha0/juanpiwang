@@ -4,6 +4,9 @@
             <div><img src="http://s2.juancdn.com/bao/170512/4/d/59158ea2ad0a49a4548b45ab_750x280.png"></div>
         </header>
         <div class="xiantime">
+            <div class="kaiStart">
+               <p> 疯狂选货，低价狂欢 </p>
+            </div>
             <div class="kaiqiang">
                 <p class="time">20:00</p>
                 <p class="kai">已开抢</p>
@@ -18,13 +21,9 @@
                <!-- <span class="trg"></span> -->
                <div class="trg"></div>
             </div>
-            <div class="kaiqiang">
-                <p class="time">20:00</p>
-                <p class="kai">已开抢</p>
-            </div>
-            <div class="kaiqiang">
-                <p class="time">20:00</p>
-                <p class="kai">已开抢</p>
+           
+            <div class="kaiEnd">
+              <p> 持续上新不要走开</p>
             </div>
         </div>
         <div class="jishi">
@@ -32,23 +31,25 @@
         </div>
         <div class="jianju"></div>
         <div class="main">
-            <ul>
-                <li>
-                    <div class="mianImg"><img class="lazy loaded" src="https://goods3.juancdn.com/goods/170920/5/e/59c22ab1a9fcf846dd40d498_800x800.jpg?iopcmd=convert&amp;Q=88&amp;dst=webp"></div>
+            <ul> 
+                <li v-for="(item, index) in xianshiList" :key="item.id">
+                   <router-link :to="item.goods_jump_url" >
+                    <div class="mianImg"><img class="lazy loaded" :src="item.pic_url"></div>
                     <div class="mainShu">
-                        <p class="goods_name">圆领百搭拼色宽松卫衣</p>
+                        <p class="goods_name">{{ item.title }}</p>
                         <p class="goods_price ">
                             <i class="tip">限量价:</i>
                             <i class="m_icon" style="margin-left:-8px"> ￥</i>
-                            <i class="now_price"> 19.90</i>
-                            <i class="goods_old_price"> ￥298.00</i>
+                            <i class="now_price"> {{ item.cprice }}</i>
+                            <i class="goods_old_price"> ￥{{ item.oprice }}</i>
                         </p>
                         <div class="progress">
-                            <div><i class="cover-bar" style="width:73%"></i><i class="txt">剩余73%</i></div>
+                            <div class="progressDi" :style=" 'width :'+ item.rate + '%'"><i class="cover-bar"></i><i class="txt">剩余{{ item.rate }}%</i></div>
                         </div>
                         <span class="buy_btn">马上抢 </span>
                     </div>
-                </li>
+                   </router-link>
+                </li> 
             </ul>
         </div>
    </div>
@@ -63,9 +64,22 @@ export default {
   name: "today",
   data () {
     return {
+        url: '../../../static/xianshiMain.json',
+        xianshiList: []
     }
+  },
+  created(){
+      this.axios.get(this.url).then(res => {
+          console.log(res.data);
+          this.xianshiList = res.data;
+      }, res => {
+          console.log(err);
+      })
   }
+ 
 }
+
+
 </script>
  
 <style lang="css" scoped>
@@ -101,6 +115,11 @@ export default {
     border-top:8px solid #ff464e ;
     z-index: 2;
 }
+.kaiEnd, .kaiStart{
+    background :#30363c;
+    color: #fff;
+}
+
 /* ---------jishi-------- */
 .jishi{
     width: 100%;
@@ -125,8 +144,11 @@ export default {
     width:3.37rem;
     margin: auto;
     padding-top: .08rem;
+      flex: 1;
+}
+.main li>a{
     display: flex;
-    flex: 1;
+  
 }
 .mianImg{
     width:.91rem;
@@ -160,7 +182,18 @@ export default {
 .progress{
     width: 1.34rem;
     height: 0.13rem;
-    background:  #ff464e;
+     background: #ffb1b4;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 0.13rem;
+    position: relative;
+}
+.progressDi{
+    background: #ff464e;
+    /* width: 1rem; */
+    height: 0.13rem;
     border-radius: 8px;
     color: #fff;
     text-align: center;
@@ -179,7 +212,14 @@ export default {
     right: 0;
     bottom: 0;
 }
-
+.txt{
+    position: absolute;
+    left: 0;
+    top: 0 ;
+    width: 100% ;
+    line-height: .13rem ;
+}
+/* -------------------------- */
 
 
 /* ------底部- */
