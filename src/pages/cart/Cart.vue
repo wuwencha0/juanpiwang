@@ -14,7 +14,7 @@ export default {
   name: "cart",
   data () {
     return {
-  
+      
     };
   }
 }

@@ -12,6 +12,7 @@ import Global from '../pages/global/Global'
 import Cart from '../pages/cart/Cart'
 import Mine from '../pages/mine/Mine'
 import IndexNav from '../pages/public/IndexNav'
+import Login from '../pages/mine/Login'
 
 //导入二级组件
 import Shangxin from '../pages/today/Shangxin'
@@ -62,7 +63,8 @@ const routes=[
   ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
-  { path: '/mine' , component: Mine }
+  { path: '/mine' , component: Mine },
+  {path: '/login', component: Login }
 ]
 
 //创建路由实例
