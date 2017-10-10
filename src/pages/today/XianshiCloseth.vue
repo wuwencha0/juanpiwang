@@ -84,15 +84,21 @@ export default {
     //获取数据
     Vue.nextTick(function(){
         //轮播图
-        const swiper = new Swiper('#xianshiqiangCloseth .banner .swiper-container', {
+        var swiper = new Swiper('#xianshiqiangCloseth .banner .swiper-container', {
             loop:false,
-            pagination: '#xianshiqiangCloseth .swiper-pagination',
-            paginationType: 'fraction'
+            pagination: '.swiper-pagination',
+            paginationType: 'fraction',
+            observer: true
+
         }); 
         console.log(swiper);
+        swiper.update();
+        setTimeout(function() {
+          swiper.update();
+          console.log(swiper);
+        }, 1000);
     }); 
  }
- 
 }
 </script>
  

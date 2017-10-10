@@ -16,7 +16,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" v-for="(item, index) in navList" 
-                :key="item.id" :class="{ 'router-link-active': index == 0}"><router-link :to="'/today/'+ luyou[index] "  
+                :key="item.id"><router-link :to="'/today/'+ luyou[index] "  
                 :class="{ 'router-link-active': index ==0 && active}">{{ item.title }} </router-link></div>
             </div>
             <!-- Add Pagination -->
@@ -80,7 +80,7 @@ export default {
     },
     computed:{
         active(){
-            return this.$route.path == '/' || 'today'
+            return this.$route.path == '/' || this.$route.path == '/today'
         }
     }
 }
