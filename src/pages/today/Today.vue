@@ -15,7 +15,7 @@
       <div class="nav">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in navList" :key="item.id"><router-link :to="'/today/'+ luyou[index] ">{{ item.title }} </router-link></div>
+                <div class="swiper-slide" v-for="(item, index) in navList" :key="item.id"><router-link :to="'/today/'+ luyou[index] " :class="{'router-link-active': index == 0 && active}">{{ item.title }} </router-link></div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -42,6 +42,11 @@ export default {
         return this.$route.path === "/today/shangxin" || this.$route.path === "/today" || this.$route.path === "/";
     }
     },
+    computed:{
+        active(){
+            return this.$route.path == '/' || this.$route.path == '/today'
+        }
+    },
     updated(){
         //获取数据
         Vue.nextTick(function(){
@@ -53,7 +58,7 @@ export default {
                 slideToClickedSlide:true,
                 slidesOffsetBefore: 10,
                 slidesOffsetAfter: 10,
-                  observer: true 
+                observer: true 
             }) ;
         });
     },
