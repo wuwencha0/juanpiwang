@@ -12,6 +12,9 @@ import Global from '../pages/global/Global'
 import Cart from '../pages/cart/Cart'
 import Mine from '../pages/mine/Mine'
 import IndexNav from '../pages/public/IndexNav'
+import Xianshiqiang from '../pages/today/Xianshiqiang'
+import XianshiCloseth from '../pages/today/XianshiCloseth'
+
 
 //导入二级组件
 import Shangxin from '../pages/today/Shangxin'
@@ -26,6 +29,7 @@ import Xiebao from '../pages/today/Xiebao'
 import Nanshi from '../pages/today/Nanshi'
 import Shoping from '../pages/youxuan/Shoping'
 import Live from '../pages/youxuan/Live'
+
 
 //配置路由规则
 const routes=[
@@ -62,7 +66,9 @@ const routes=[
   ]},
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
-  { path: '/mine' , component: Mine }
+  { path: '/mine' , component: Mine },
+  { path: '/xianshiqiang' , component:  Xianshiqiang },
+  { path: '/xianshicloseth' , component: XianshiCloseth }
 ]
 
 //创建路由实例
