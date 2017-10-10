@@ -12,13 +12,10 @@ import Global from '../pages/global/Global'
 import Cart from '../pages/cart/Cart'
 import Mine from '../pages/mine/Mine'
 import IndexNav from '../pages/public/IndexNav'
-<<<<<<< HEAD
 import Login from '../pages/mine/Login'
-=======
 import Xianshiqiang from '../pages/today/Xianshiqiang'
 import XianshiCloseth from '../pages/today/XianshiCloseth'
 
->>>>>>> 5459bf77ba951372c80957809459c52cbb725768
 
 //导入二级组件
 import Shangxin from '../pages/today/Shangxin'
