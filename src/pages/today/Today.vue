@@ -15,7 +15,9 @@
       <div class="nav">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" v-for="(item, index) in navList" :key="item.id"><router-link :to="'/today/'+ luyou[index] ">{{ item.title }} </router-link></div>
+                <div class="swiper-slide" v-for="(item, index) in navList" 
+                :key="item.id"><router-link :to="'/today/'+ luyou[index] "  
+                :class="{ 'router-link-active': index ==0 && active}">{{ item.title }} </router-link></div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -24,9 +26,7 @@
        <router-view></router-view>
    </div>
 </template>
- 
 <script>
-
 
 import Vue from 'vue'
 
@@ -37,7 +37,6 @@ export default {
            luyou:['shangxin', 'nvzhuang', 'xiebao', 'muying', 'shuma', 'jujia', 'nanshi', 'meizhuang', 'meishi', 'jingpin'],
             url: '../../../static/todayNav.json',
             navList: []
-            
         };
     },
     methods: {
@@ -45,19 +44,23 @@ export default {
         return this.$route.path === "/today/shangxin" || this.$route.path === "/today" || this.$route.path === "/";
     }
     },
+    computed:{
+        active(){
+            return this.$route.path == '/' || this.$route.path == '/today'
+        }
+    },
     updated(){
         //获取数据
         Vue.nextTick(function(){
-            
             //导航
             var mySwiper = new Swiper('.nav .swiper-container', {
-                slidesPerView: 6,
+                slidesPerView: 5.9,
                 freeMode: true,
                 spaceBetween: 5,
                 slideToClickedSlide:true,
                 slidesOffsetBefore: 10,
                 slidesOffsetAfter: 10,
-                  observer: true 
+                observer: true 
             }) ;
         });
     },
@@ -74,6 +77,11 @@ export default {
             console.log(err);
         });
         // console.log(111);
+    },
+    computed:{
+        active(){
+            return this.$route.path == '/' || this.$route.path == '/today'
+        }
     }
 }
 </script>
