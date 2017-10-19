@@ -7,7 +7,7 @@
 						<span id="t-index">个人中心</span>
 					</div>
 					<div class="user-login">
-              <span>注册</span><b>|</b><router-link to="/Login">登录</router-link>
+              <router-link to="/register"><span>注册</span></router-link><b>|</b><router-link to="/Login">登录</router-link>
 						</div>
 				</header>
 			</div>

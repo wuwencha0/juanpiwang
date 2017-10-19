@@ -3,7 +3,7 @@
        <header>
            <img src="https://jp.juancdn.com/jpwebapp_v1/images_v1/user/arrow_white.png?5123297e-1&sv=a8351a1e" alt="" class="iconBack">
            <span>登录</span>
-           <div>注册</div>
+           
        </header>
     </div>
 </template>

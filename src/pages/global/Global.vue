@@ -3,7 +3,7 @@
         <header>
           <div>
             全球购
-            <span></span>
+            <router-link to="/today"><span></span></router-link>
           </div>
         </header>
         <div class="banner">
