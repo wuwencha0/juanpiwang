@@ -14,6 +14,10 @@ import axios from 'axios'
 
 Vue.prototype.axios = axios ;
 
+//导入vue-awesome-swiper模块
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

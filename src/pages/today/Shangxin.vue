@@ -1,18 +1,10 @@
 <template>
    <div id="shangxin">
       <div class="banner">
-          <div class="swiper-container">
-              <div class="swiper-wrapper">
-                  <!-- <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/f/5/59c70bb08150a139312b8b46_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods4.juancdn.com/jas/170920/7/1/59c1c0baa9fcf83c4773cd61_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div> -->
-                   <div class="swiper-slide" v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </div>
-              </div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination"></div>
-          </div>
+          <swiper :options="swiperOption" ref="mySwiperA">
+              <swiper-slide v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+          </swiper>
       </div>
       <!-- 首页接入模块广告 -->
       <div class="moudle-ad">
@@ -93,22 +85,25 @@ export default {
         banner:[],
         url2: '../../../static/shangxinMain.json',
         main: [],
-        manjian: []
-    };
-  },
-  updated(){
-    //获取数据
-    Vue.nextTick(function(){
-        //轮播图
-        var swiperB = new Swiper('.banner .swiper-container', {
+        manjian: [],
+        swiperOption: {
+            notNextTick: true, 
             pagination: '.swiper-pagination',
             paginationClickable: true,
             loop:true,
             autoplayDisableOnInteraction: false,
-            autoplay: 1000//可选选项，自动滑动
-        }); 
-    });
- },
+            autoplay: 3000
+        }
+    };
+  },
+  computed: {
+    swiper() {
+     return this.$refs.mySwiperA.swiper
+    }
+  },
+  mounted() {
+    this.swiper.slideTo(1, 0, false)
+   },
  created(){
      this.axios.get(this.url).then(res => {
             // console.log(res.data);
