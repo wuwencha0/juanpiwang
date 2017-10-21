@@ -33,7 +33,13 @@ let state = {
     meishiMain: null,
     jingpinListnv: null,
     jingpinMain: null,
-    xianshiListData: null
+    xianshiListData: null,
+    listData: null,
+    list2Data: null,
+    list3Data: null,
+    list4Data: null,
+    list5Data: null,
+    list6Data: null
 }
 
 let mutations = {
