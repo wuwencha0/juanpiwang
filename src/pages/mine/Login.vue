@@ -61,6 +61,9 @@ export default {
         text-align: center;
         color: #fff;
     }
+    header a{
+        color: #fff;
+    }
     .iconBack{
         width: 25px;
         position: absolute;
