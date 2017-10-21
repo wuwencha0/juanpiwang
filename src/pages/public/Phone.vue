@@ -1,10 +1,5 @@
 <template>
-    <div id="register">
-       <header>
-           <img src="https://jp.juancdn.com/jpwebapp_v1/images_v1/user/arrow_black.png?.inf-1&sv=449ce9ee" alt="" class="iconBack" @click="back()">
-           <span>注册</span>
-       </header>
-       <div class="care">请保持手机通信流畅，便于接受验证码</div>
+    <div id="count">
        <div class="num">
            <input type="text" name="" id="p_num" placeholder="请输入手机号码">
            <div class="pass">
@@ -17,48 +12,20 @@
     
 <script>
 export default {
-  name: "register",
+  name: "count",
   data () {
     return {
         
     };
-  },
-  methods: {
-      back () {
-          window.history.back(-1);
-      }
   }
 }
 </script>
     
 <style lang="css" scoped>
-    header{
-        height: 44px;
-        line-height: 44px;
-        font-size: 18px;
-        position: relative;
-        text-align: center;
-        color: #000;
-        border-bottom: 1px solid #e8e8e8;
-    }
-    .iconBack{
-        width: 25px;
-        position: absolute;
-        left: .1rem;
-        top: 10px;
-    }
-    .care {
-        height: 60px;
-        width: 100%;
-        line-height: 60px;
-        font-size: 12px;
-        text-align: center;
-        color:#999;
-    }
     .num {
         width: 100%;
         margin: 0 auto;
-        height: 185px;
+        height: 170px;
         display: flex;
         flex-direction: column;
     }
@@ -93,7 +60,7 @@ export default {
         font-size: 14px;
     }
     .btn {
-        width: 90%;
+        width: 100%;
         height: 48px;
         background: #dbdbdb;
         color: #fff;

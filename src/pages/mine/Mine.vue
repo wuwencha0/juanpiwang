@@ -7,7 +7,7 @@
 						<span id="t-index">个人中心</span>
 					</div>
 					<div class="user-login">
-              <router-link to="/register"><span>注册</span></router-link><b>|</b><router-link to="/Login">登录</router-link>
+              <router-link to="/register"><span>注册</span></router-link><b>|</b><router-link to="/Login"><span>登录</span></router-link>
 						</div>
 				</header>
 			</div>
@@ -100,6 +100,9 @@ export default {
   }
   .user-login b{
     margin: 0 .45rem ;
+  }
+  .user-login span {
+    color: white;
   }
   .myorder{
     font-size: 15px;

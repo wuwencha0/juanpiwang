@@ -13,6 +13,8 @@ import Cart from '../pages/cart/Cart'
 import Mine from '../pages/mine/Mine'
 import IndexNav from '../pages/public/IndexNav'
 import Login from '../pages/mine/Login'
+import Count from '../pages/public/Count'
+import Phone from '../pages/public/Phone'
 import Register from '@/pages/mine/Register'
 import Xianshiqiang from '../pages/today/Xianshiqiang'
 import XianshiCloseth from '../pages/today/XianshiCloseth'
@@ -69,7 +71,11 @@ const routes=[
   { path: '/global' , component: Global },
   { path: '/cart' , component: Cart },
   { path: '/mine' , component: Mine },
-  {path: '/login', component: Login },
+  {path: '/login', component: Login, children:[
+    {path: '', component: Count},
+    {path: 'count', component: Count},
+    {path: 'phone', component: Phone},
+  ]},
   {path: '/register', component: Register },
   { path: '/xianshiqiang' , component:  Xianshiqiang },
   { path: '/xianshicloseth' , component: XianshiCloseth }
