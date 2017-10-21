@@ -112,47 +112,35 @@ export default {
        url3:"./././static/ajax_data/data/global-baby.json",
        url4:"./././static/ajax_data/data/global-beauty.json",
        url5:"./././static/ajax_data/data/global-food.json",
-       url6:"./././static/ajax_data/data/global-goods.json",
-       list:[{pic:''},{pic:''},{pic:''},{pic:''},{pic:''},{pic:''}],
-       list2:[{pic:''}],
-       list3:[{pic:''}],
-       list4:[{pic:''}],
-       list5:[{pic:''}],
-       list6:[{pic:''}]
+       url6:"./././static/ajax_data/data/global-goods.json"
     };
   },
-  created(){
-    this.axios.get(this.url).then(res=>{
-      this.list = res.data.data.banner_ads;
-    },err=>{
-      console.log(err);
-    });
-    this.axios.get(this.url2).then(res=>{
-      this.list2 = res.data.list;   
-    },err=>{
-      console.log(err);
-    });
-    this.axios.get(this.url3).then(res=>{
-      this.list3 = res.data.list;   
-    },err=>{
-      console.log(err);
-    });
-    this.axios.get(this.url4).then(res=>{
-      this.list4 = res.data.list;   
-    },err=>{
-      console.log(err);
-    });
-    this.axios.get(this.url5).then(res=>{
-      this.list5 = res.data.list;   
-    },err=>{
-      console.log(err);
-    });
-    this.axios.get(this.url6).then(res=>{
-      this.list6 = res.data.data;   
-    },err=>{
-      console.log(err);
-    });
-  },
+  computed:{
+        list(){
+            if (this.tools.isDataNull(this, 'listData', this.url)) return [{pic:''},{pic:''},{pic:''},{pic:''},{pic:''},{pic:''}]
+            return this.$store.state.listData.data.banner_ads;
+        },
+        list2(){
+            if (this.tools.isDataNull(this, 'list2Data', this.url2)) return [{pic:''}]
+            return this.$store.state.list2Data.list;
+        },
+        list3(){
+            if (this.tools.isDataNull(this, 'list3Data', this.url3)) return [{pic:''}]
+            return this.$store.state.list3Data.list;
+        },
+        list4(){
+            if (this.tools.isDataNull(this, 'list4Data', this.url4)) return [{pic:''}]
+            return this.$store.state.list4Data.list;
+        },
+        list5(){
+            if (this.tools.isDataNull(this, 'list5Data', this.url5)) return [{pic:''}]
+            return this.$store.state.list5Data.list;
+        },
+        list6(){
+            if (this.tools.isDataNull(this, 'list6Data', this.url6)) return [{pic:''}]
+            return this.$store.state.list6Data.data;
+        }
+    },
   updated(){
   //获取数据
       Vue.nextTick(function(){

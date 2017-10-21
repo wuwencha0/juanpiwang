@@ -1,18 +1,10 @@
 <template>
    <div id="shangxin">
       <div class="banner">
-          <div class="swiper-container">
-              <div class="swiper-wrapper">
-                  <!-- <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/f/5/59c70bb08150a139312b8b46_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods4.juancdn.com/jas/170920/7/1/59c1c0baa9fcf83c4773cd61_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div>
-                  <div class="swiper-slide"><img src="https://goods8.juancdn.com/jas/170924/e/a/59c70c018150a1382b327cc6_1080x418.png?imageMogr2/thumbnail/750x290!/quality/80!/format/png"></div> -->
-                   <div class="swiper-slide" v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </div>
-              </div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination"></div>
-          </div>
+          <swiper :options="swiperOption" ref="mySwiperA">
+              <swiper-slide v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </swiper-slide>
+              <div class="swiper-pagination" slot="pagination"></div>
+          </swiper>
       </div>
       <!-- 首页接入模块广告 -->
       <div class="moudle-ad">
@@ -86,51 +78,47 @@
 import Vue from 'vue'
 
 export default {
-  name: "today",
-  data () {
-    return {
-        url: '../../../static/todayBanner.json',
-        banner:[],
-        url2: '../../../static/shangxinMain.json',
-        main: [],
-        manjian: []
-    };
-  },
-  updated(){
-    //获取数据
-    Vue.nextTick(function(){
-        //轮播图
-        var swiperB = new Swiper('.banner .swiper-container', {
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            loop:true,
-            autoplayDisableOnInteraction: false,
-            autoplay: 1000//可选选项，自动滑动
-        }); 
-    });
- },
- created(){
-     this.axios.get(this.url).then(res => {
-            // console.log(res.data);
-            this.banner = res.data;
-        }, res => {
-            console.log(err);
-        });
-        this.axios.get(this.url2).then(res => {
-            // console.log(res.data);
-            this.main = res.data;
-            //判断有木有某个属性
-           for(var i of res.data){
+    name: "today",
+    data () {
+        return {
+            url: '../../../static/todayBanner.json',
+            url2: '../../../static/shangxinMain.json',
+            swiperOption: {
+                notNextTick: true, 
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                loop:true,
+                autoplayDisableOnInteraction: false,
+                autoplay: 3000
+            }
+        };
+    },
+    computed: {
+        swiper() {
+            return this.$refs.mySwiperA.swiper
+        },
+        banner(){
+            if (this.tools.isDataNull(this, 'shangxinBanner', this.url)) return []
+            return this.$store.state.shangxinBanner
+        },
+        main(){
+            if (this.tools.isDataNull(this, 'shangxinMain', this.url2)) return []
+            return this.$store.state.shangxinMain
+        },
+        manjian(){
+            let arr = [];
+            for(var i of this.main){
                 if(!i.coupon){
-                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    arr.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
                     continue;
                 }
-                this.manjian.push(i.coupon.rules);
-           }
-            // console.log(this.manjian);
-        }, res => {
-            console.log(err);
-        })
+                arr.push(i.coupon.rules);
+            }
+            return arr
+        }
+    },
+    mounted() {
+        this.swiper.slideTo(1, 0, false)
     },
     filters: {
         manji1(item){

@@ -32,7 +32,7 @@
         <div class="jianju"></div>
         <div class="main">
             <ul> 
-                <li v-for="(item, index) in xianshiList" :key="item.id">
+                <li v-for="(item, index) in xianshiList" :key="item.id" @click="currentGood(item)">
                    <router-link :to="item.goods_jump_url" >
                     <div class="mianImg"><img class="lazy loaded" :src="item.pic_url"></div>
                     <div class="mainShu">
@@ -64,18 +64,20 @@ export default {
   name: "today",
   data () {
     return {
-        url: '../../../static/xianshiMain.json',
-        xianshiList: []
+        url: '../../../static/xianshiMain.json'
     }
   },
-  created(){
-      this.axios.get(this.url).then(res => {
-          console.log(res.data);
-          this.xianshiList = res.data;
-      }, res => {
-          console.log(err);
-      })
-  }
+  computed:{
+        xianshiList(){
+            if (this.tools.isDataNull(this, 'xianshiListData', this.url)) return []
+            return this.$store.state.xianshiListData;
+        }
+    },
+    methods:{
+        currentGood(good){
+            this.$store.dispatch('activegood', good);
+        }
+    }
  
 }
 

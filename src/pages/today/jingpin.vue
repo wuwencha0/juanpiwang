@@ -42,34 +42,42 @@ export default {
   data () {
     return {
         url: '../../../static/jingpinTab.json',
-        listNv: [],
-        url2: '../../../static/jingpinMain.json',
-        main: [],
-        manjian: []
+        url2: '../../../static/jingpinMain.json'
     };
   },
-  created(){
-      this.axios.get(this.url).then(res => {
-        //   console.log(res.data);
-          this.listNv = res.data;
-      }, res => {
-          console.log(err);
-      });
-      this.axios.get(this.url2).then(res => {
-            // console.log(res.data);
-            this.main = res.data;
-           for(var i of res.data){
+  computed: {
+        listNv(){
+            if(!this.$store.state.shangxinBanner){
+                this.$store.dispatch('getData', {
+                    type: 'shangxinBanner',
+                    url: this.url
+                });
+                return []
+            }
+            return this.$store.state.shangxinBanner
+        },
+        main(){
+            if(!this.$store.state.shangxinMain){
+                this.$store.dispatch('getData', {
+                    type: 'shangxinMain',
+                    url: this.url2
+                });
+                return []
+            }
+            return this.$store.state.shangxinMain
+        },
+        manjian(){
+            let arr = [];
+            for(var i of this.main){
                 if(!i.coupon){
-                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    arr.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
                     continue;
                 }
-                this.manjian.push(i.coupon.rules);
-           }
-            // console.log(this.manjian);
-        }, res => {
-            console.log(err);
-        })
-  },
+                arr.push(i.coupon.rules);
+            }
+            return arr
+        }
+    },
   filters: {
         manji1(item){
             if(item.iscut){

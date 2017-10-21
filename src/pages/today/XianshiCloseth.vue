@@ -9,11 +9,12 @@
                   <div class="swiper-slide"><img class="sc-keVrkP idBkAx" src="https://goods2.juancdn.com/goods/170909/2/9/59b3916ea9fcf83b915958d9_800x800.jpg?imageMogr2/quality/88!/format/jpg"></div>
                   <div class="swiper-slide"><img class="sc-keVrkP idBkAx" src="https://goods2.juancdn.com/goods/170909/3/5/59b3916ea9fcf8356d364b00_800x800.jpg?imageMogr2/quality/88!/format/jpg"></div>
                   <div class="swiper-slide"><img class="sc-keVrkP idBkAx" src="https://goods1.juancdn.com/goods/170909/1/a/59b39425a9fcf83c500ac1b7_800x800.jpg?iopcmd=convert&amp;Q=88&amp;dst=jpg"></div>
-                   <!-- <div class="swiper-slide" v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </div> -->
+
               </div>
               <!-- Add Pagination -->
               <div class="swiper-pagination">34567</div>
           </div>
+          <!-- <h2>{{currentGood}}</h2> -->
           <div class="listFenlei">
               <span></span>
               <span></span>
@@ -91,8 +92,13 @@ export default {
             observer: true
 
         }); 
-        console.log(swiper);
     }); 
+ },
+ computed:{
+   currentGood(){
+     console.log(this.$store.state.current_good)
+     return this.$store.state.current_good
+   }
  }
 }
 </script>

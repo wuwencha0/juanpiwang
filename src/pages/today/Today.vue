@@ -34,9 +34,8 @@ export default {
   name: "today",
     data () {
         return {
-           luyou:['shangxin', 'nvzhuang', 'xiebao', 'muying', 'shuma', 'jujia', 'nanshi', 'meizhuang', 'meishi', 'jingpin'],
-            url: '../../../static/todayNav.json',
-            navList: []
+           luyou:['shangxin', 'nvzhuang/nvzhuang', 'nvzhuang/xiebao', 'nvzhuang/muying', 'nvzhuang/shuma', 'nvzhuang/jujia', 'nvzhuang/nanshi', 'nvzhuang/meizhuang', 'nvzhuang/meishi', 'jingpin'],
+            url: '../../../static/todayNav.json'
         };
     },
     methods: {
@@ -47,9 +46,13 @@ export default {
     computed:{
         active(){
             return this.$route.path == '/' || this.$route.path == '/today'
+        },
+        navList(){
+            if (this.tools.isDataNull(this, 'navListData', this.url)) return []
+            return this.$store.state.navListData[0].subtab;
         }
     },
-    updated(){
+    mounted(){
         //获取数据
         Vue.nextTick(function(){
             //导航
@@ -63,25 +66,6 @@ export default {
                 observer: true 
             }) ;
         });
-    },
-    //我们会把网络请求的代码，放在这个钩子函数中
-    created() {
-        // console.log(this);
-        //   console.log(this); //this当前组件实例
-        // 在网络请求中，推荐使用箭头函数，这样能完美的解决 this指向问题
-        this.axios.get(this.url).then(res => {//异步请求需要回调 then函数
-            // console.log(res.data[0].subtab);
-            // console.log(JSON.parse(res.data))
-            this.navList=res.data[0].subtab;
-        }, err => {
-            console.log(err);
-        });
-        // console.log(111);
-    },
-    computed:{
-        active(){
-            return this.$route.path == '/' || this.$route.path == '/today'
-        }
     }
 }
 </script>
