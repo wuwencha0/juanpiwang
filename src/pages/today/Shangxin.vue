@@ -78,54 +78,47 @@
 import Vue from 'vue'
 
 export default {
-  name: "today",
-  data () {
-    return {
-        url: '../../../static/todayBanner.json',
-        banner:[],
-        url2: '../../../static/shangxinMain.json',
-        main: [],
-        manjian: [],
-        swiperOption: {
-            notNextTick: true, 
-            pagination: '.swiper-pagination',
-            paginationClickable: true,
-            loop:true,
-            autoplayDisableOnInteraction: false,
-            autoplay: 3000
-        }
-    };
-  },
-  computed: {
-    swiper() {
-     return this.$refs.mySwiperA.swiper
-    }
-  },
-  mounted() {
-    this.swiper.slideTo(1, 0, false)
-   },
- created(){
-     this.axios.get(this.url).then(res => {
-            // console.log(res.data);
-            this.banner = res.data;
-        }, res => {
-            console.log(err);
-        });
-        this.axios.get(this.url2).then(res => {
-            // console.log(res.data);
-            this.main = res.data;
-            //判断有木有某个属性
-           for(var i of res.data){
+    name: "today",
+    data () {
+        return {
+            url: '../../../static/todayBanner.json',
+            url2: '../../../static/shangxinMain.json',
+            swiperOption: {
+                notNextTick: true, 
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                loop:true,
+                autoplayDisableOnInteraction: false,
+                autoplay: 3000
+            }
+        };
+    },
+    computed: {
+        swiper() {
+            return this.$refs.mySwiperA.swiper
+        },
+        banner(){
+            if (this.tools.isDataNull(this, 'shangxinBanner', this.url)) return []
+            return this.$store.state.shangxinBanner
+        },
+        main(){
+            if (this.tools.isDataNull(this, 'shangxinMain', this.url2)) return []
+            return this.$store.state.shangxinMain
+        },
+        manjian(){
+            let arr = [];
+            for(var i of this.main){
                 if(!i.coupon){
-                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    arr.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
                     continue;
                 }
-                this.manjian.push(i.coupon.rules);
-           }
-            // console.log(this.manjian);
-        }, res => {
-            console.log(err);
-        })
+                arr.push(i.coupon.rules);
+            }
+            return arr
+        }
+    },
+    mounted() {
+        this.swiper.slideTo(1, 0, false)
     },
     filters: {
         manji1(item){

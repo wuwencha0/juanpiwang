@@ -19,7 +19,6 @@ export default {
   name: "indexnav",
   data () {
     return {
-      menuList: [],
       routes : [ "/today", "/youxuan", "/global", "/cart", "/mine" ]
     };
   },
@@ -39,19 +38,16 @@ export default {
         num = 4 ;
       }
       return num ;
+    },
+    menuList(){
+      if (this.tools.isDataNull(this, 'menuListData', '../../../static/getMenu.json')) return []
+      return this.$store.state.menuListData.menu_list
     }
   },
   filters:{
     activeImg(item) {
       return item[1] == item[2] ? item[0].act_icon : item[0].bg_icon ;
     }
-  },
-  created() {
-    this.axios.get('../../../static/getMenu.json').then(res => {
-      this.menuList = res.data.menu_list ;
-    },err => {
-      console.log(err)
-    })
   }
 }
 </script>

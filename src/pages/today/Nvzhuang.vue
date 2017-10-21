@@ -38,38 +38,47 @@
  
 <script>
 export default {
-  name: "today",
-  data () {
-    return {
-        url: '../../../static/nvzhuangTab.json',
-        listNv: [],
-        url2: '../../../static/nvzhuangMain.json',
-        main: [],
-        manjian: []
-    };
-  },
-  created(){
-      this.axios.get(this.url).then(res => {
-        //   console.log(res.data);
-          this.listNv = res.data;
-      }, res => {
-          console.log(err);
-      });
-      this.axios.get(this.url2).then(res => {
-            // console.log(res.data);
-            this.main = res.data;
-           for(var i of res.data){
+    name: "today",
+    data () {
+        return {
+            urls: {
+                nvzhuang: ['../../../static/nvzhuangTab.json', '../../../static/nvzhuangMain.json'],
+                xiebao: ['../../../static/xiebaoTab.json', '../../../static/xiebaoMain.json',],
+                muying: ['../../../static/muyingTab.json', '../../../static/muyingMain.json'],
+                shuma: ['../../../static/shumaTab.json', '../../../static/shumaMain.json'],
+                jujia: ['../../../static/jujiaTab.json', '../../../static/jujiaMain.json'],
+                nanshi: ['../../../static/nanshiTab.json', '../../../static/nanshiMain.json'],
+                meizhuang: ['../../../static/meizhuangTab.json', '../../../static/meizhuangMain.json'],
+                meishi: ['../../../static/meishiTab.json', '../../../static/meishiMain.json']
+            }
+        };
+    },
+    computed: {
+        luyou(){
+            return this.$route.params.class
+        },
+        listNv(){
+            let dataType = this.luyou + 'Listnv'
+            if (this.tools.isDataNull(this, dataType, this.urls[this.luyou][0])) return []
+            return this.$store.state[dataType]
+        },
+        main(){
+            let dataType = this.luyou + 'Main'
+            if (this.tools.isDataNull(this, dataType, this.urls[this.luyou][1])) return []
+            return this.$store.state[dataType]
+        },
+        manjian(){
+            let arr = [];
+            for(var i of this.main){
                 if(!i.coupon){
-                    this.manjian.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
+                    arr.push({cprice: i.cprice, oprice: i.oprice, iscut: 1});
                     continue;
                 }
-                this.manjian.push(i.coupon.rules);
-           }
-            // console.log(this.manjian);
-        }, res => {
-            console.log(err);
-        })
-  },
+                arr.push(i.coupon.rules);
+            }
+            return arr
+        }
+    },
   filters: {
         manji1(item){
             if(item.iscut){
