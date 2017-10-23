@@ -1,5 +1,5 @@
 <template>
-   <div id="shangxin">
+   <div id="shangxin clearfixed">
       <div class="banner">
           <swiper :options="swiperOption" ref="mySwiperA">
               <swiper-slide v-for="(item, index) in banner" :key="item.id"><img :src="item.pic" /> </swiper-slide>
@@ -68,7 +68,7 @@
         </main>
       </div>
       <!-- 底部距离 -->
-      <div class="dibu"></div>
+      <div class="dibu clearfixed"></div>
    </div>
 </template>
  
