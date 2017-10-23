@@ -64,7 +64,6 @@ function stretch(initH, direction, className){
         var h = 0, flag = false, h0 = 0;
         html.addEventListener('touchmove', (e) => {
             if(upDate.offsetTop != html.scrollHeight && direction < 0 && !h) clearEl.style.height = html.scrollHeight - upDate.offsetTop + 'px';
-            console.log(html.scrollHeight, upDate.offsetTop);
             if(direction > 0) flag = html.scrollTop == 0 ;
             if(direction < 0) flag = html.scrollTop + html.clientHeight == html.scrollHeight;
             e = e || window.event ;
