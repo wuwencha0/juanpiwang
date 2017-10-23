@@ -7,11 +7,12 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 let state = {
+    upDateFlag: false,
     cart_goods: [],
     current_good: null,
     user: null,
     menuListData: null,
-    showData: null,
+    showData: [],
     navListData: null,
     shangxinBanner: null,
     shangxinMain: null,
@@ -101,6 +102,21 @@ let mutations = {
     },
     GETDATA(state, item){
         state[item.type] = item.data;
+    },
+    CURRENTDATA(state, data){
+        for (let item of state.showData){
+            if (item.type == data.type) return
+        }
+        state.showData.push(data);
+    },
+    CLEARDATA(state){
+        state.showData = [] ;
+    },
+    TFLAG(state){
+        state.upDateFlag = true ;
+    },
+    FFLAG(state){
+        state.upDateFlag = false ;
     }
 }
 
@@ -121,7 +137,6 @@ let actions = {
         commit('ACTIVEGOOD', item)
     },
     getData({ commit }, item){
-        commit('GETDATA', {data:{}, type: item.type})
         axios.get(item.url).then(res => {
             commit('GETDATA', {data:res.data, type: item.type})
         }, err => {
@@ -157,3 +172,10 @@ const store = new Vuex.Store({
 })
 
 export default store
+
+window.onpopstate = function(){
+    var route = location.hash.substr(1);
+    // //触发回调函数
+    // router[route] && router[route]();
+    console.log(this)
+}

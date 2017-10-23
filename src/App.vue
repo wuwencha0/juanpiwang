@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @touchmove="upDate()">
     <indexnav></indexnav>
   </div>
 </template>
@@ -18,7 +18,23 @@ export default {
   name: 'app',
   components: {
     indexnav: IndexNav
-  }
+	},
+	methods:{
+		upDate(){
+			if (this.tools.scrTop() > 80){
+				this.tools.upDate(this)
+			}
+		}
+	},
+	created(){
+		this.tools.scrBottom(0, -1.6);
+		this.tools.scrTop();
+
+		let self = this ;
+		window.onpopstate = function(){
+			self.$store.commit('CLEARDATA')
+		}
+	}
 }
 </script>
 

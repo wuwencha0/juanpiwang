@@ -32,7 +32,7 @@
         </main>
 
       <!-- 底部距离 -->
-      <div class="dibu"></div>
+      <div class="dibu clearfixed"></div>
    </div>
 </template>
  
