@@ -18,6 +18,13 @@ Vue.prototype.axios = axios ;
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 Vue.use(VueAwesomeSwiper)
 
+import vueLoader from 'vue-lazyload'
+Vue.use(vueLoader,{
+  preLoad: 1.3,  
+  attempt: 1  
+
+})
+
 //导入函数工具tools
 import tools from './tools'
 Vue.prototype.tools = tools ;

@@ -50,7 +50,7 @@
                 <li v-for="(item, index) in main" :key="item.id">
                     <a href="">
                         <div class="clothes">
-                            <img class="lazy loaded" :src="item.pic_url" alt="骆汐女装清仓专场">
+                            <img class="lazy loaded" v-lazy="item.pic_url" alt="骆汐女装清仓专场">
                             <div class="shop-logo">
                                 <img class="lazy loaded" :src="item.shop_logo">
                             </div>
